@@ -1,0 +1,26 @@
+<div class="container">
+  <table class="own">
+    <thead class="head">
+      <th>AccountNo</th>
+      <th>First Name</th>
+      <th>Aadhar No</th>
+      <th>Balance</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{customer.accountNo}}</td>
+        <td>{{customer.firstName}}</td>
+        <td>{{customer.aadharNo}}</td>
+        <td>{{customer.balance}}</td>
+        <td><button class="btn btn-danger" (click)="deleteCustomer(customer)">Delete</button> </td>
+        <td><button class="btn btn-primary" (click)="updateCustomer(customer.accountNo,customer)">Update</button> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary" (click)="createCustomer()">New Customer</button>
+
+  let customer:Customer;
+  <button class="btn btn-primary" (click)="loginCustomer(customer)">Login Customer</button>
+</div>
